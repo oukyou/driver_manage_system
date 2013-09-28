@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+     <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="x_03_1">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>来宾接送信息</h2>
+      <ul class="links clearfix">
+        <li>
+          <i class="icon-circle-arrow-left"></i>
+          <a href="X-03.html">返回</a>
+        </li>
+      </ul>
+      <div class="contents-box">
+        <table id="customer" class="customer">
+          <tbody>
+            <tr>
+              <th>姓名</th>
+              <td>徐老大</td>
+            </tr>
+            <tr>
+              <th>单位</th>
+              <td>无锡华夏计算机技术有限公司</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <section class="contents-box">
+        <h3>来宾接送详细信息一览</h3>
+        <div class="alert alert-success">
+          <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+          [情报消息领域]
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>日期</th>
+              <th>驾驶员</th>
+              <th>车辆</th>
+              <th>接送类型</th>
+              <th>详细信息</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="id">1</td>
+              <td class="date">2012/04/03</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">接</td>
+              <td>下午4点半接于虹桥机场</td>
+            </tr>
+            <tr>
+              <td class="id">2</td>
+              <td class="date">2012/04/06</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">送</td>
+              <td>上午10点送到无锡硕放机场</td>
+            </tr>
+            <tr>
+              <td class="id">3</td>
+              <td class="date">2012/08/03</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">接</td>
+              <td>下午4点半接于虹桥机场</td>
+            </tr>
+            <tr>
+              <td class="id">4</td>
+              <td class="date">2012/08/06</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">送</td>
+              <td>上午10点送到无锡硕放机场</td>
+            </tr>
+            <tr>
+              <td class="id">5</td>
+              <td class="date">2012/10/03</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">接</td>
+              <td>下午4点半接于虹桥机场</td>
+            </tr>
+            <tr>
+              <td class="id">6</td>
+              <td class="date">2012/10/06</td>
+              <td class="name">王老五</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">送</td>
+              <td>上午10点送到无锡硕放机场</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

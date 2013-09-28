@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="/assets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/assets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="/assets/carinfomanage.css" rel="stylesheet" media="screen">
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="/assets/html5.js"></script>
+  <![endif]-->
+  <script src="/assets/jquery.min.js"></script>
+  <script src="/assets/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div id="header" class="container">
+  <header id="header_top" class="header-general">
+    <div id="site_id">
+      <hgroup>
+        <h1><span></span></h1>
+        <h2>驾驶员调度信息管理系统</h2>
+      </hgroup>
+    </div>
+
+    <div id="login_current_time">
+      <p>
+        <i class="icon-time"></i>
+          <%= current_day_label %>
+      </p>
+    </div>
+  </header>
+</div>
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>请求错误</h2>
+      <div class="alert alert-error">
+        请求的画面不存在！
+      </div>
+      <div class="operation">
+        <p>
+          <%= link_to(dms_root_path) class: "btn btn-warning" do%>
+            <i class="icon-reply"> 返回登录画面</i>
+          <%end%>
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+<div id="footer">
+  <footer id="footer_top" class="container footer-general">
+    <div id="copyright">
+      <p><small>Copyright(C) 2013 Wuxi Ruanxiao2 All Rights Reserved.</small></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

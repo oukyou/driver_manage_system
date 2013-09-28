@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+
+      $('#o_p8').change(function(){
+        if ($(this).val() === "") {
+          $('#o_p9').val("")
+        }
+        else if (parseInt($(this).val()) % 2 === 0) {
+          $('#o_p9').val("宝马X" + $(this).val())
+        }
+        else {
+          $('#o_p9').val("奥迪Q" + $(this).val())
+        }
+      });
+    });
+  </script>
+</head>
+<body id="y_01">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>来宾信息登记</h2>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [错误消息领域]
+      </div>
+      <section class="contents-box">
+        <h3>来宾接送信息登记</h3>
+        <form class="form-horizontal" action="Y-02.html">
+          <section class="form-box">
+            <fieldset>
+              <p><span class="required">[*]</span>的地方是必须入力项目</p>
+              <div class="control-group">
+                <label class="control-label" for="o_p1">日期<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p1" name="o[p1]" class="input-small datepicker">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">类别<span class="required">[*]</span></label>
+                <div class="controls">
+                  <label class="radio inline">
+                    <input type="radio" id="o_p2_0" name="o[p2]" value="0" checked="checked">
+                    接
+                  </label>
+                  <label class="radio inline">
+                    <input type="radio" id="o_p2_1" name="o[p2]" value="1">
+                    送
+                  </label>
+                </div>
+              </div>
+              <div class="control-group error">
+                <label class="control-label" for="o_p3">姓名<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" class="form-control">
+                  <button class="btn btn-primary" type="button" onclick="openwindow('Y-01-1.html',800,960);">选择 <i class="icon-search"></i></button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p4">单位<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p4" name="o[p4]" class="input-xxlarge">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p5">职务<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p5" name="o[p5]" class="input-xlarge">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p6">联系方式<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p6" name="o[p6]" class="input-xlarge">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p7">接送驾驶员<span class="required">[*]</span></label>
+                <div class="controls">
+                  <select id="o_p7" class="form-control">
+                    <option value="" selected = "selected">请选择驾驶员</option>
+                    <option value="1">徐老大</option>
+                    <option value="2">徐老二</option>
+                    <option value="3">徐老三</option>
+                    <option value="4">徐老四</option>
+                    <option value="5">徐老五</option>
+                    <option value="6">张老大</option>
+                    <option value="7">张老二</option>
+                    <option value="8">张老三</option>
+                    <option value="9">张老四</option>
+                    <option value="10">张老五</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p8">接送车辆<span class="required">[*]</span></label>
+                <div class="controls">
+                  <select id="o_p8" class="form-control">
+                    <option value=""  selected = "selected">请选择车辆</option>
+                    <option value="1">苏BAK147</option>
+                    <option value="2">苏BA147Q</option>
+                    <option value="3">苏B7B12D</option>
+                    <option value="4">苏BAC163</option>
+                    <option value="5">苏BM332S</option>
+                    <option value="6">苏BQ123Q</option>
+                    <option value="7">苏BAD111</option>
+                    <option value="8">苏BK231W</option>
+                    <option value="9">苏BG176V</option>
+                    <option value="10">苏BM322S</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p9">车型</label>
+                <div class="controls">
+                  <input type="text" id="o_p9" name="o[p9]" class="input-xlarge" disabled="disabled">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p10">开始时间<span class="required">[*]</span></label>
+                <div class="controls">
+                  <select id="o_p10" class="form-control">
+                    <option value=""  selected = "selected">请选择开始时</option>
+                    <option value="0">00</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                  </select>
+                  <span class="label_note">时</span>
+                  <select id="o_p10_1" class="form-control">
+                    <option value=""  selected = "selected">请选择开始分</option>
+                    <option value="0">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <span class="label_note">分</span>
+                </div>
+                <div class="btn-group">
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p11">终了时间<span class="required">[*]</span></label>
+                <div class="controls">
+                  <select id="o_p11" class="form-control">
+                    <option value=""  selected = "selected">请选择终了时</option>
+                    <option value="0">00</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                  </select>
+                  <span class="label_note">时</span>
+                  <select id="o_p11_1" class="form-control">
+                    <option value=""  selected = "selected">请选择终了分</option>
+                    <option value="0">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <span class="label_note">分</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p13">行驶里程数<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p13" name="o[p13]" class="input-xlarge">
+                  <span class="label_note">公里</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p14">接送详细信息<span class="required">[*]</span></label>
+                <div class="controls">
+                  <textarea id="o_p14" name="o[p14]" class="input-xxlarge" rows="3"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <div class="operation">
+            <p><button type="submit" class="btn btn-success">登记来宾接送信息</button></p>
+          </div>
+        </form>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

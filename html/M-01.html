@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+	<meta charset="utf-8">
+	<title>驾驶员调度信息管理系统</title>
+	<!-- css -->
+	<link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+	<link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+	<link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+	<link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+	<link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<!-- script -->
+	<!--[if lt IE 9]>
+ 		<script src="./javascripts/html5.js"></script>
+	<![endif]-->
+	<script src="./javascripts/jquery.min.js"></script>
+	<script src="./javascripts/bootstrap.min.js"></script>
+	<script src='./javascripts/jquery-ui.custom.min.js'></script>
+	<script src='./javascripts/fullcalendar.min.js'></script>
+	<script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+	<script src="./javascripts/common.js"></script>
+	<script>
+		$(function () {
+			$('#header').load('common/header.html');
+			$('#footer').load('common/footer.html');
+
+			var calendar = $('#calendar').fullCalendar({
+				header: {
+					left: '',
+					center: 'title',
+					right: 'prev,next today'
+				},
+				monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+	        	monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+	        	dayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+				dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+      	today: ["今天"],
+      	buttonText: {
+      		today: '今天'
+    		},
+    		firstDay:1,
+				titleFormat:"yyyy年M月",
+				aspectRatio: 1.85,
+				dayClick: function(date, allDay, jsEvent, view) {
+			        window.location.href="Y-02.html";
+    			},
+  			events: [
+				{
+					id:1,
+					title: '中秋节',
+					start: '2013-09-19',
+					end: '2013-09-21'
+				},
+        {
+          id:1000,
+          title: '国庆调休',
+          start: '2013-09-30',
+          end: '2013-09-30'
+        },
+        {
+          id:1001,
+          title: '国庆节',
+          start: '2013-10-01',
+          end: '2013-10-07'
+        },
+        {
+          id:1002,
+          title: '周末',
+          start: '2013-08-31',
+          end: '2013-09-01'
+        },
+        {
+          id:1003,
+          title: '周末',
+          start: '2013-09-07',
+          end: '2013-09-08'
+        },
+        {
+          id:1004,
+          title: '周末',
+          start: '2013-09-14',
+          end: '2013-09-15'
+        },
+        {
+          id:1006,
+          title: '周末',
+          start: '2013-09-28',
+          end: '2013-09-29'
+        }]
+			});
+      $("#contents .fc-day").css("cursor", "pointer");
+		});
+	</script>
+</head>
+<body id="m_01">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+	<div id="contents">
+		<section>
+			<h2>系统首页-日期选择</h2>
+			<div id="calendar" class="contents-box"></div>
+		</section>
+	</div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

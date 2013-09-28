@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+     <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+</head>
+<body id="y_03_1">
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>车辆日运行情况</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <section  class="contents-box">
+        <h3>基础信息</h3>
+        <table id="customer" class="customer">
+          <tbody>
+            <tr>
+              <th>车牌</th>
+              <td><span class="date">苏BAK147</span></td>
+            </tr>
+            <tr>
+              <th>车型</th>
+              <td><span class="date">奥迪Q5</span></td>
+            </tr>
+            <tr>
+              <th>对象日</th>
+              <td><span class="date">2013年9月25日</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section  class="contents-box">
+        <h3>车辆日运行情况详细一览</h3>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>驾驶员</th>
+              <th>接送类型</th>
+              <th>开始时间</th>
+              <th>终了时间</th>
+              <th>行驶里程</th>
+              <th>接送来宾</th>
+              <th>详细信息</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="id">1</td>
+              <td class="name">徐老大</td>
+              <td class="car_type">接</td>
+              <td class="date">07:00</td>
+              <td class="date">10:00</td>
+              <td class="date">378 公里</td>
+              <td class="operation">张一号</td>
+              <td class="note">接于上海虹桥机场</td>
+            </tr>
+            <tr>
+              <td class="id">2</td>
+              <td class="name">徐老大</td>
+              <td class="car_type">送</td>
+              <td class="date">14:00</td>
+              <td class="date">15:30</td>
+              <td class="date">58 公里</td>
+              <td class="operation">王老大</td>
+              <td class="note">送于无锡硕放机场</td>
+            </tr>
+            <tr>
+              <td class="id">3</td>
+              <td class="name">徐老大</td>
+              <td class="car_type">送</td>
+              <td class="date">17:30</td>
+              <td class="date">18:30</td>
+              <td class="date">26 公里</td>
+              <td class="operation">赵大炮</td>
+              <td class="note">送于无锡汽车站</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="operation">
+          <p><button type="submit" class="btn btn-danger" onclick="window.close();">关闭本页 <i class="icon-off"></i></button></p>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+</body>
+</html>
+

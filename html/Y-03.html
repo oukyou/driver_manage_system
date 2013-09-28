@@ -1,0 +1,620 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+     <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="y_03">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>车辆运行情况</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <section id="list" class="contents-box">
+        <h3>车辆运行详细一览表</h3>
+        <table id="customer" class="customer">
+          <tbody>
+            <tr>
+              <th>选择对象日</th>
+              <td><span class="date">2013年9月25日</span><span class="link-group"><span><a href="#">前日</a></span><span><a href="#">次日</a></span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="list" class="contents-box">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th rowspan="2">车牌</th>
+              <th rowspan="2">车型</th>
+              <th colspan="48" >2013年9月25日（时间轴）</th>
+            </tr>
+            <tr>
+              <th class="time" colspan="2">00:<br>00</th>
+              <th class="time" colspan="2">01:<br>00</th>
+              <th class="time" colspan="2">02:<br>00</th>
+              <th class="time" colspan="2">03:<br>00</th>
+              <th class="time" colspan="2">04:<br>00</th>
+              <th class="time" colspan="2">05:<br>00</th>
+              <th class="time" colspan="2">06:<br>00</th>
+              <th class="time" colspan="2">07:<br>00</th>
+              <th class="time" colspan="2">08:<br>00</th>
+              <th class="time" colspan="2">09:<br>00</th>
+              <th class="time" colspan="2">10:<br>00</th>
+              <th class="time" colspan="2">11:<br>00</th>
+              <th class="time" colspan="2">12:<br>00</th>
+              <th class="time" colspan="2">13:<br>00</th>
+              <th class="time" colspan="2">14:<br>00</th>
+              <th class="time" colspan="2">15:<br>00</th>
+              <th class="time" colspan="2">16:<br>00</th>
+              <th class="time" colspan="2">17:<br>00</th>
+              <th class="time" colspan="2">18:<br>00</th>
+              <th class="time" colspan="2">19:<br>00</th>
+              <th class="time" colspan="2">20:<br>00</th>
+              <th class="time" colspan="2">21:<br>00</th>
+              <th class="time" colspan="2">22:<br>00</th>
+              <th class="time" colspan="2">23:<br>00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BAK147</a></td>
+              <td class="process">奥迪Q5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BBG368</a></td>
+              <td class="process">奥迪A6</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏B592F8</a></td>
+              <td class="process">宝马740Li</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏B58126</a></td>
+              <td class="process">奥迪Q7</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏B8N258</a></td>
+              <td class="process">昂克雷</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BBF173</a></td>
+              <td class="process">奔驰E600</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used" class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BQ660Q</a></td>
+              <td class="process">宝马5系</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BA666B</a></td>
+              <td class="process">奥迪A6</td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BK163B</a></td>
+              <td class="process">奥迪A6</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="process"><a href="#" onclick="openwindow('Y-03-1.html',800,960);">苏BM332B</a></td>
+              <td class="process">奥德赛</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td class="process-used"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

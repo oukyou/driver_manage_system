@@ -1,0 +1,532 @@
+@charset "UTF-8";
+
+/*******************************************************
+	bootstrap重定义
+*******************************************************/
+html{
+	overflow-y: scroll;
+	height: 100%;
+}
+body{
+	font-family:"宋体",Arial, sans-serif;
+	background-color: #ddd;
+	font-size: 12px;
+	line-height: 1.4;
+	width: 100%;
+	position: relative;
+	height: auto !important;
+	min-height: 100%;
+}
+ul,ol{
+	margin: 0;
+	list-style: none;
+}
+li{
+	list-style: none;
+}
+
+caption,th{
+	text-align: left;
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 14px;
+}
+.tab-content{
+	padding-top: 10px;
+}
+
+.nav-tabs{
+	font-size: 14px;
+	padding-top: 10px;
+}
+/*-------------------------------------------
+	表
+--------------------------------------------*/
+.table{
+	font-size: 12px;
+}
+.table th{
+	text-align: center;
+	padding: 5px;
+	background: #edeae5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fafafa 0%, #f1f1f1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fafafa 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fafafa 0%,#f1f1f1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fafafa 0%,#f1f1f1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fafafa 0%,#f1f1f1 100%); /* W3C */
+	color: #333;
+	line-height: 1.5;
+}
+.table th.time{
+	font-size: 10px;
+	line-height: 1;
+}
+
+.table td{
+	padding: 5px;
+	line-height: 1.5;
+	vertical-align:middle;
+}
+/*-------------------------------------------
+	往bootstrap的「table」里追加样式
+--------------------------------------------*/
+.table td.process{
+	font-size: 12px;
+	line-height: 1;
+}
+.table td.overwork_hour{
+	font-size: 12px;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.table td.process-used{
+	font-size: 12px;
+	line-height: 1;
+	background-color: #016aa9;
+}
+.table td.id,
+.table td.overwork_hour,
+.table td.sex{
+	width: 30px;
+	text-align: center;
+	white-space: nowrap;
+}
+.table td.card_no,
+.table td.phone_no,
+.table td.date,
+.table td.car_no,
+.table td.car_type{
+	width: 68px;
+	text-align: center;
+	white-space: nowrap;
+}
+.table td.name{
+	width: 48px;
+	text-align: left;
+	white-space: nowrap;
+}
+.table td.access_car,
+.table td.address,
+.table td.note{
+	text-align: left;
+}
+.table td.operation{
+	width: 62px;
+	text-align: center;
+	white-space: nowrap;
+}
+.table td.numberic{
+	width: 120px;
+	text-align: center;
+	white-space: nowrap;
+}
+.table td.operation a{
+	padding: 0 2px;
+	font-size: 12px;
+}
+
+table.customer{
+	font-size: 12px;
+	width: 95%;
+}
+table.customer tr{
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+}
+table.customer th{
+	width: 150px;
+	padding: 7px;
+	color: #333;
+	font-weight: bold;
+	background: #f8f8f8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f8f8f8 0%, #f3f3f3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#f3f3f3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f8f8f8 0%,#f3f3f3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f8f8f8 0%,#f3f3f3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f8f8f8 0%,#f3f3f3 100%); /* IE10+ */
+	background: linear-gradient(top bottom,  #f8f8f8 0%,#f3f3f3 100%); /* W3C */
+}
+table.customer td{
+	padding: 5px 7px;
+	line-height: 1.5;
+}
+table.customer span.link-group{
+	margin-left: 7px;
+}
+table.customer span.link-group > span{
+	margin-left: 3px;
+	border: 1px solid #ddd;
+	background-color: #f6f6f6;
+	padding: 1px 6px;
+	border-radius: 3px;
+}
+
+
+
+/*******************************************************
+	重定义font-awesome
+*******************************************************/
+[class^="icon-"],
+[class*=" icon-"] {
+	font-size: 13px;
+}
+
+/*-------------------------------------------
+	页面头部
+--------------------------------------------*/
+#header_top{
+	position: relative;
+	height: 59px;
+}
+.header-general{
+	background: #016aa9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ccc 0%, #016aa9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ccc), color-stop(100%,#016aa9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ccc 0%,#016aa9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ccc 0%,#016aa9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ccc 0%,#016aa9 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ccc 0%,#016aa9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#016aa9',GradientType=0 ); /* IE6-9 */
+	box-shadow: 1px 0 3px #ccc, -1px 0 3px #ccc;
+}
+
+#site_id{
+	position: relative;
+	float: left;
+	margin-left: 0;
+}
+#site_id h1{
+	margin: 8px 0 0 4px;
+}
+#site_id h1 a,
+#site_id h1 span{
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	width: 90px;
+	height: 48px;
+}
+#site_id h2{
+	color: #fff;
+	font-size: 16px;
+	white-space: nowrap;
+	margin: 0;
+	position: absolute;
+	left: 5px;
+	bottom: 2px;
+	line-height: 1.4;
+}
+
+#exit_btn{
+	position: absolute;
+	right: 5px;
+	top: 25px;
+	height: 18px;
+	width: 70px;
+}
+
+#current_time{
+	position: absolute;
+	color: #ffffff;
+	right: 85px;
+	top: 35px;
+}
+#current_time p{
+	color: #ffffff;
+	font-size: 12px;
+}
+
+/* 主菜单 */
+#globalnav{
+	width: 100%;
+	margin: 0 auto;
+}
+#globalnav ul{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background: #016aa9;
+	text-shadow: 0 0 1px rgba(0,0,0,0.2);
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	box-shadow: 0 1px 3px #ccc;
+}
+#globalnav li{
+	float: left;
+}
+#globalnav li a{
+	color: #fff;
+	text-decoration: none;
+	padding: 4px 0;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: -1px 0 0 rgba(255, 255, 255, 0.3) inset;
+	font-size: 13px;
+	text-align: center;
+	display: block;
+	width: 120px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#globalnav li a:hover{
+	background: #223355;
+}
+
+#globalnav>ul>li ul{
+	position:absolute;
+	width: 125px;
+}
+
+#globalnav>ul>li ul li a{
+	color: #fff;
+	padding-left: 5px;
+	text-decoration: none;
+	padding: 0px 1;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: -1px 0 0 rgba(255, 255, 255, 0.3) inset;
+	font-size: 13px;
+	text-align: left;
+	display: block;
+	width: 120px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+/*-------------------------------------------
+	登陆画面用
+--------------------------------------------*/
+#login_current_time{
+	position: absolute;
+	color: #ffffff;
+	right: 10px;
+	top: 35px;
+}
+#login_current_time p{
+	color: #ffffff;
+	font-size: 12px;
+}
+
+#login{
+	margin: 40px auto;
+	width: 540px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: #ccc;
+	box-shadow: 1px 1px 1px #ccc;
+	position: relative;
+}
+#login h2{
+	font-size: 14px;
+	color: #555;
+	padding-left: 125px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+#login .control-group label{
+	font-size: 14px;
+	color: #223355;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+#login fieldset{
+	padding-left: 40px;
+}
+
+/*-------------------------------------------
+	页面body部分
+--------------------------------------------*/
+#container{
+	padding-bottom: 82px;
+}
+/*-------------------------------------------
+	页面底部
+--------------------------------------------*/
+#footer{
+	width: 100%;
+	position: absolute;
+	left:0;
+	bottom: 0;
+	height: 52px;
+}
+#footer_top{
+	height: 50px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	position: relative;
+	box-shadow: 0 2px 3px #ccc;
+}
+
+#copyright{
+	padding-top: 20px;
+}
+#copyright p{
+	color: #ffffff;
+	font-size: 13px;
+	text-align: center;
+}
+#to_page_top{
+	position: absolute;
+	color: #016aa9;
+	top: -1.8em;
+	right: 5px;
+	height: 28px;
+}
+.footer-general{
+	border-top: 1px solid #CCC;
+	background-color: #223355;
+}
+#to_page_top a{
+	color: #016aa9;
+}
+
+/* web日期 */
+#calendar {
+  font-size: 14px;
+}
+/*-------------------------------------------
+	页面body内容
+--------------------------------------------*/
+#contents{
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 1 2px 3px #ccc;
+	padding: 10px 20px 10px 15px;
+	margin-top: 15px;
+}
+#contents h2{
+	font-size: 20px;
+	line-height: 30px;
+	padding-left: 3px;
+	padding-bottom: 0;
+	color: #333;
+	border-bottom: 1px solid #333;
+}
+#contents h3{
+	font-size: 16px;
+	color: #333;
+	padding-left: 8px;
+	margin-bottom: 15px;
+	line-height: 26px;
+	padding: 3px 6px;
+	border-bottom: 1px dashed #666;
+}
+#contents h4{
+	font-size: 14px;
+	margin: 10px 0 6px 0;
+	border-left: 7px solid #FFA500;
+	padding-left: 8px;
+}
+#contents .contents-box{
+	padding: 5px 0;
+}
+#contents .page_nav{
+	width:180px;
+}
+#contents .pager span.page_info{
+	margin-left: 5px;
+	font-size: 13px;
+	color: #016aa9;
+
+}
+
+#contents .add-oper{
+	text-align: left;
+	padding: 6px;
+	border: 1px solid #ddd;
+	background-color: #f6f6f6;
+}
+/* 更新表单 */
+#contents .form-box{
+	padding: 5px 0;
+}
+
+/* 画面注释 */
+#contents .form-box span.required{
+	color: #b94a48;
+	font-size: 12px;
+	padding-right: 3px;
+	vertical-align: middle;
+}
+
+#contents .form-box fieldset{
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #fffcf3;
+}
+
+/* 链接 */
+#contents ul{
+	margin-bottom: 0;
+}
+#contents ul.links{
+	padding-left: 3px;
+}
+#contents ul.links li{
+	float: left;
+	padding-right: 10px;
+}
+#contents ul.links i{
+	width: 1em;
+}
+/* 追加，更新按钮 */
+#contents .operation{
+	text-align: center;
+	margin-top: 15px;
+}
+
+/*-------------------------------------------
+	form
+	往bootstrap的「form-horizontal」里追加样式
+--------------------------------------------*/
+.form-horizontal .controls-edit {
+  *display: inline-block;
+  *padding-left: 20px;
+  margin-left: 180px;
+  *margin-left: 0;
+	margin-bottom: 1px;
+}
+.form-horizontal .controls-edit input{
+	border-radius: 0;
+}
+.form-horizontal i + .help-block,
+.form-horizontal label + .help-block{
+  margin-top: 10px;
+}
+/* 必须入力项目 */
+.form-horizontal span.required{
+	color: #b94a48;
+	font-size: 14px;
+	padding-right: 3px;
+	vertical-align: middle;
+}
+/* 标签说明 */
+.form-horizontal span.label_note{
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+/*下载*/
+.form-horizontal .download{
+	padding-top: 8px;
+}
+.form-horizontal .download i{
+	font-size: 14px;
+}
+
+/* 共通 */
+span.date{
+	font-weight: bold;
+}

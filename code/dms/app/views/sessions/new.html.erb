@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <%= stylesheet_link_tag    "application", :media => "screen" %>
+  <%= javascript_include_tag "application" %>
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "html5" %>
+  <![endif]-->
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div id="header" class="container">
+  <header id="header_top" class="header-general">
+    <div id="site_id">
+      <hgroup>
+        <h1><span></span></h1>
+        <h2>驾驶员调度信息管理系统</h2>
+      </hgroup>
+    </div>
+    <div id="login_current_time">
+      <p>
+        <i class="icon-time"></i>
+          <%= current_day_label %>
+      </p>
+    </div>
+  </header>
+</div>
+<div id="container" class="container">
+  <section id="login" class="clearfix">
+    <%= render "/commons/error_message_area" %>
+    <h2>请输入用户名和密码。</h2>
+    <%= form_tag(dms_sessions_path, class: "form-horizontal") do %>
+      <fieldset>
+        <div class="control-group">
+          <label class="control-label" for="user_name">用户 <i class="icon-user"></i></label>
+          <div class="controls">
+            <%= text_field_tag(:user_name, @user_name, class: "input-medium") %>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="password">密码 <i class="icon-lock"></i></label>
+          <div class="controls">
+            <%= password_field_tag(:password, nil, class: "input-medium") %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <button class="btn btn-primary" type="submit">点击登录  <i class="icon-caret-right"></i></button>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </section>
+</div>
+<div id="footer">
+  <footer id="footer_top" class="container footer-general">
+    <div id="copyright">
+      <p><small>Copyright(C) 2013 Wuxi Ruanxiao2 All Rights Reserved.</small></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

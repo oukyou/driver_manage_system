@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="x_01_2">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>驾驶员信息管理</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [错误消息领域]
+      </div>
+      <ul class="links clearfix">
+        <li>
+          <i class="icon-circle-arrow-left"></i>
+          <a href="X-01.html">返回</a>
+        </li>
+      </ul>
+      <section class="contents-box">
+        <h3>驾驶员信息变更</h3>
+        <form class="form-horizontal" action="X-01-2.html">
+          <section class="form-box">
+            <fieldset>
+              <p><span class="required">[*]</span>的地方是必须入力项目</p>
+              <div class="control-group">
+                <label class="control-label" for="o_p1">姓名<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p1" name="o[p1]" class="input-xlarge" value="王老五">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">性别<span class="required">[*]</span></label>
+                <div class="controls">
+                  <label class="radio inline">
+                    <input type="radio" id="o_p2_0" name="o[p2]" value="0" checked="checked">
+                    男
+                  </label>
+                  <label class="radio inline">
+                    <input type="radio" id="o_p2_1" name="o[p2]" value="1">
+                    女
+                  </label>
+                </div>
+              </div>
+              <div class="control-group error">
+                <label class="control-label" for="o_p3">驾驶证号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p3" name="o[p3]" class="input-xlarge" value="340225198102285234">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p4">档案号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p4" name="o[p4]" class="input-xlarge" value="AZD001002">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p5">准驾车型<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p5" name="o[p5]" class="input-xlarge" value="客车、卡车、小轿车">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p6">初次领证日<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p6" name="o[p6]" class="input-small datepicker" value="2008/04/25">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p7">住址<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p7" name="o[p7]" class="input-xxlarge" value="无锡市新区春潮花园198号302室">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p8">联系方式<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p8" name="o[p8]" class="input-xlarge" value="138001380000">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p9">备注</label>
+                <div class="controls">
+                  <textarea id="o_p9" name="o[p9]" class="input-xxlarge" rows="3" filter="true">驾驶技术较好，
+近几年没有事故记录</textarea>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <div class="operation">
+            <p><button type="submit" class="btn btn-warning">保存驾驶员信息</button></p>
+          </div>
+        </form>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>

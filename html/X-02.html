@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="x_02">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>车辆信息管理</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <section id="driver_list" class="contents-box">
+        <h3>车辆添加</h3>
+        <div class="add-oper">
+          <a href="X-02-1.html" class="btn btn-success">添加车辆 <i class="icon-caret-right"></i></a>
+          <a href="#" class="btn btn-primary">车辆信息报表 <i class="icon-caret-right"></i></a>
+        </div>
+      </section>
+      <section id="driver_list" class="contents-box">
+        <h3>车辆基本信息一览</h3>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>车牌号</th>
+              <th>车型</th>
+              <th>登记日期</th>
+              <th>入门证号</th>
+              <th>保险日期</th>
+              <th>详细信息</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="id">1</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">2</td>
+              <td class="car_no">苏BA2N18</td>
+              <td class="car_type">奥迪Q7</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">3</td>
+              <td class="car_no">苏BA126B</td>
+              <td class="car_type">宝马535</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">4</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">5</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">6</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">7</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+            <tr>
+              <td class="id">8</td>
+              <td class="car_no">苏BAK147</td>
+              <td class="car_type">奥迪Q5</td>
+              <td class="date">2012/01/23</td>
+              <td class="card_no">Audi20120123</td>
+              <td class="date">2014/01/22</td>
+              <td class="operation">
+                <a data-toggle="modal" href="#car_info" class="btn btn-info" >点击查看<i class="icon-zoom-in"></i></a>
+              </td>
+              <td class="operation"><a href="X-02-2.html" class="btn btn-warning">编辑<i class="icon-edit"></i></a> <a href="#" class="btn btn-danger">删除<i class="icon-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <div id="car_info" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>车辆详细信息</h3>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-diag-result">
+          <tbody>
+            <tr>
+              <td style="width:120px;">车牌号</td>
+              <td>苏BAK147</td>
+            </tr>
+            <tr>
+              <td>客位</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>颜色</td>
+              <td>珠光白</td>
+            </tr>
+            <tr>
+              <td>发动机号</td>
+              <td>1734830921</td>
+            </tr>
+            <tr>
+              <td>车架号</td>
+              <td>LSP001299838747366</td>
+            </tr>
+            <tr>
+              <td>年检情况</td>
+              <td>2013年8月25日已实施年检</td>
+            </tr>
+            <tr>
+              <td>维修情况</td>
+              <td>2012年12月跟换变速箱油<br>2013年8月跟换右前轮轮胎</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">关闭</button>
+      </div>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

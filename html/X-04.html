@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    function toDate(str) {
+      var sd=str.split("-");
+      return new Date(sd[0],sd[1],sd[2]);
+    }
+    $("td[data-date = '2013-09-02']").css("background", "#ff0000");
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+
+      var hasHoliday = function(date) {
+        var hasHoliday = false,
+            newDate = toDate($.fullCalendar.formatDate(date, "yyyy-MM-dd"));
+        $(calendar.fullCalendar('clientEvents')).each(function(key, value) {
+          var oldStart = toDate($.fullCalendar.formatDate(value.start, "yyyy-MM-dd"));
+          var oldEnd = oldStart;
+          if (value.end) {
+            oldEnd = toDate($.fullCalendar.formatDate(value.end, "yyyy-MM-dd"));
+          }
+          if (newDate >= oldStart && newDate <= oldEnd ) {
+            hasHoliday = true;
+          }
+        });
+        return hasHoliday;
+      }
+
+      var calendar = $('#calendar').fullCalendar({
+        header: {
+          left: '',
+          center: 'title',
+          right: 'prev,next today'
+        },
+        firstDay:1,
+        monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            dayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+        dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+        today: ["今天"],
+        buttonText: {
+          today: '今天'
+        },
+        titleFormat:"yyyy年M月",
+        aspectRatio: 1.85,
+        selectable: true,
+        selectHelper: true,
+        editable: false,
+        events: [
+        {
+          id:1,
+          title: '中秋节',
+          start: '2013-09-19',
+          end: '2013-09-21'
+        },
+        {
+          id:1000,
+          title: '国庆调休',
+          start: '2013-09-30',
+          end: '2013-09-30'
+        },
+        {
+          id:1001,
+          title: '国庆节',
+          start: '2013-10-01',
+          end: '2013-10-07'
+        },
+        {
+          id:1002,
+          title: '周末',
+          start: '2013-08-31',
+          end: '2013-09-01'
+        },
+        {
+          id:1003,
+          title: '周末',
+          start: '2013-09-07',
+          end: '2013-09-08'
+        },
+        {
+          id:1004,
+          title: '周末',
+          start: '2013-09-14',
+          end: '2013-09-15'
+        },
+        {
+          id:1006,
+          title: '周末',
+          start: '2013-09-28',
+          end: '2013-09-29'
+        }],
+        select: function(start, end, allDay) {
+          var title = prompt('请输入节假日名称:');
+          if (title) {
+            if (hasHoliday(start) || hasHoliday(end)) {
+              alert("该日期已经设置过节假日，请重新选择日期!");
+            }
+            else {
+              // 此处使用ajax将数据保存到数据库
+              var id = parseInt($("#max_holiday_id").val());
+              calendar.fullCalendar('renderEvent',
+                {
+                  id:id, // id（必须） 在删除事件时使用，该值对应数据库的节假日id
+                  title: title,
+                  start: start,
+                  end: end
+                },
+                true
+              );
+              $("#max_holiday_id").val(id + 1);
+            }
+          }
+          calendar.fullCalendar('unselect');
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+          if (confirm("确定要删除该节假日信息吗？")) {
+            // 此处使用ajax删除数据库里面的数据
+            calendar.fullCalendar('removeEvents', calEvent.id);
+          }
+        }
+      });
+      $("#contents .fc-event").css("cursor", "pointer");
+    });
+  </script>
+</head>
+<body id="x_04">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>节假日管理</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <div id="calendar" class="contents-box"><input type="hidden" id="max_holiday_id" value="1"></div>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

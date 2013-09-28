@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="x_02_2">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>车辆信息管理</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [错误消息领域]
+      </div>
+      <ul class="links clearfix">
+        <li>
+          <i class="icon-circle-arrow-left"></i>
+          <a href="X-02.html">返回</a>
+        </li>
+      </ul>
+      <section class="contents-box">
+        <h3>车辆信息变更</h3>
+        <form class="form-horizontal" action="X-02-2.html">
+          <section class="form-box">
+            <fieldset>
+              <p><span class="required">[*]</span>的地方是必须入力项目</p>
+              <div class="control-group">
+                <label class="control-label" for="o_p1">车牌号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p1" name="o[p1]" class="input-xlarge" value="苏BAK147">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p2">车型<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p2" name="o[p2]" class="input-xlarge" value="奥迪Q5">
+                </div>
+              </div>
+              <div class="control-group error">
+                <label class="control-label" for="o_p3">客位<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p3" name="o[p3]" class="input-xlarge" value="5">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p4">颜色<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p4" name="o[p4]" class="input-xlarge" value="珠光白">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p5">发动机号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p5" name="o[p5]" class="input-xlarge" value="LSP0012233212501">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p6">车架号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p6" name="o[p6]" class="input-xlarge" value="33212501">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p7">登记日期<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p7" name="o[p7]" class="input-small datepicker" value="2012/01/23">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p8">入门证号<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p8" name="o[p8]" class="input-xlarge" value="Audi20120123">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p9">保险日期<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p9" name="o[p9]" class="input-small datepicker" value="2014/01/22">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p10">年检情况<span class="required">[*]</span></label>
+                <div class="controls">
+                  <input type="text" id="o_p10" name="o[p10]" class="input-xlarge" value="已年检">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="o_p11">维修情况</label>
+                <div class="controls">
+                  <textarea id="o_p11" name="o[p11]" class="input-xxlarge" rows="3">已更换轮胎、刹车油、已更换变速箱油</textarea>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <div class="operation">
+            <p><button type="submit" class="btn btn-warning">保存车辆信息</button></p>
+          </div>
+        </form>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

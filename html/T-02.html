@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+     <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="t_02">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>来宾信息统计</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <section  class="contents-box">
+        <h3>统计期间内检索</h3>
+        <form class="form-inline" action="T-02.html">
+          <section class="form-box">
+            <fieldset>
+              <table>
+                <tbody>
+                  <tr>
+                    <span class="required">画面初期显示条件：系统当前年度的开始日~系统当前日期</span>
+                    <th><label class="control-label" for="o_p1">开始年月日</label></th>
+                    <td>
+                        <input type="text" id="o_p1" name="o[p1]" class="input-small datepicker" value="2013/01/01">
+                    </td>
+                    <td>
+                      <th><label class="sr-only"  for="o_p2">终了年月日</label></th>
+                    <td>
+                        <input type="text" id="o_p2" name="o[p2]" class="input-small datepicker" value="2013/09/24">
+                        <button class="btn btn-primary">检索 <i class="icon-search"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </section>
+        </form>
+      </section>
+      <section>
+        <h3>统计期间内结果</h3>
+        <div class="contents-box">
+          <table id="customer" class="customer">
+            <tbody>
+              <tr>
+                <th>来宾数量</th>
+                <td>82 人</td>
+              </tr>
+              <tr>
+                <th>来宾次数</th>
+                <td>116 次</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+

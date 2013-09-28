@@ -1,0 +1,59 @@
+  <script>
+    $(function () {
+      $('.drop-down-menu').hide();
+      $(".drop-down").bind('mouseover',function() {
+        $(this).children('ul').show();
+      });
+      $(".drop-down").bind('mouseleave',function() {
+        $(this).children('ul').hide();
+      });
+    });
+  </script>
+
+  <header id="header_top" class="header-general">
+    <div id="site_id">
+      <hgroup>
+        <h1><span></span></h1>
+        <h2>驾驶员调度信息管理系统</h2>
+      </hgroup>
+    </div>
+    <div id="exit_btn">
+      <a href="L-01.html" class="btn btn-primary">退出 <i class="icon-caret-right"></i></a>
+    </div>
+    <div id="current_time">
+      <p>
+        <i class="icon-time"></i>
+          今天是： 2013年9月22日 星期日
+      </p>
+    </div>
+  </header>
+  <nav id="globalnav">
+    <ul class="nav nav-pills">
+      <li><a href="M-01.html">首页</a></li>
+
+      <li class="drop-down"><a href="Y-01.html">业务中心</a>
+        <ul class="drop-down-menu">
+          <li><a href="Y-01.html">来宾信息登记</a></li>
+          <li><a href="Y-02.html">驾驶员工作情况</a></li>
+          <li><a href="Y-03.html">车辆运行情况</a></li>
+        </ul>
+      </li>
+
+      <li class="drop-down"><a href="T-01.html">统计分析</a>
+        <ul class="drop-down-menu">
+          <li><a href="T-01.html">驾驶员绩效统计</a></li>
+          <li><a href="T-02.html">来宾信息统计</a></li>
+        </ul>
+      </li>
+
+
+      <li class="drop-down"><a href="X-01.html">系统管理</a>
+        <ul class="drop-down-menu">
+          <li><a href="X-01.html">驾驶员信息管理</a></li>
+          <li><a href="X-02.html">车辆信息管理</a></li>
+          <li><a href="X-03.html">来宾信息管理</a></li>
+          <li><a href="X-04.html">节假日管理</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>

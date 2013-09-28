@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html lang="zh_ch">
+<head>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="./stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/datepicker.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/carinfomanage.css" rel="stylesheet" media="screen">
+  <link href='./stylesheets/fullcalendar.css' rel='stylesheet' />
+  <link href='./stylesheets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <!-- script -->
+  <!--[if lt IE 9]>
+     <script src="./javascripts/html5.js"></script>
+  <![endif]-->
+  <script src="./javascripts/jquery.min.js"></script>
+  <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/jquery-ui.custom.min.js'></script>
+  <script src='./javascripts/fullcalendar.min.js'></script>
+  <script src="./javascripts/bootstrap-datepicker.js"></script>
+  <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
+  <script src="./javascripts/common.js"></script>
+  <script>
+    $(function () {
+      $('#header').load('common/header.html');
+      $('#footer').load('common/footer.html');
+    });
+  </script>
+</head>
+<body id="t_01">
+<div id="header" class="container">
+</div>
+
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>驾驶员绩效统计</h2>
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [情报消息领域]
+      </div>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+        [错误消息领域]
+      </div>
+      <section  class="contents-box">
+        <h3>统计期间</h3>
+        <table id="customer" class="customer">
+          <tbody>
+            <tr>
+              <th>対象月</th>
+              <td><span class="date">2013年10月</span><span class="link-group"><span><a href="#">前月</a></span><span><a href="#">次月</a></span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section  class="contents-box">
+        <h3>统计结果</h3>
+        <form class="form-horizontal" action="T-01.html">
+          <table class="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>姓名</th>
+                <th>平时加班时数(时)</th>
+                <th>节假日加班时数(时)</th>
+                <th>绩效里程(公里)</th>
+                <th>保洁奖（元）</th>
+                <th>考勤情况</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="name">徐老大</td>
+                <td class="numberic">8.5</td>
+                <td class="numberic">15</td>
+                <td class="numberic">2,854</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">徐老二</td>
+                <td class="numberic">12.5</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,823</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">徐老三</td>
+                <td class="numberic">0</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,554</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">徐老四</td>
+                <td class="numberic">16</td>
+                <td class="numberic">0</td>
+                <td class="numberic">2,316</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">张老大</td>
+                <td class="numberic">8.5</td>
+                <td class="numberic">15</td>
+                <td class="numberic">2,854</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">张老二</td>
+                <td class="numberic">12.5</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,823</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">张老三</td>
+                <td class="numberic">0</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,554</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">张老四</td>
+                <td class="numberic">16</td>
+                <td class="numberic">0</td>
+                <td class="numberic">2,316</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">王老大</td>
+                <td class="numberic">8.5</td>
+                <td class="numberic">15</td>
+                <td class="numberic">2,854</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">王老二</td>
+                <td class="numberic">12.5</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,823</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">王老三</td>
+                <td class="numberic">0</td>
+                <td class="numberic">5</td>
+                <td class="numberic">1,554</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+              <tr>
+                <td class="name">王老四</td>
+                <td class="numberic">16</td>
+                <td class="numberic">0</td>
+                <td class="numberic">2,316</td>
+                <td class=""><input type="text" id="o_p1" name="o[p1]" class="input-small"></td>
+                <td><input type="text" id="o_p1" name="o[p1]" class="input-xlarge"></td>
+              </tr>
+            </toby>
+          </table>
+          <div class="operation">
+            <p>
+              <button type="submit" class="btn btn-warning">保存绩效统计</button>
+              <a href="#" class="btn btn-primary">绩效统计出力 <i class="icon-caret-right"></i></a>
+            </p>
+          </div>
+        </form>
+      </section>
+    </section>
+  </div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>
+
