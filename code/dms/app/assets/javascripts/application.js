@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui.custom.min
 //= require bootstrap.min
+//= require bootbox
 //= require fullcalendar.min
 //= require bootstrap-datepicker
 //= require locales/bootstrap-datepicker.ja

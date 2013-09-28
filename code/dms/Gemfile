@@ -24,6 +24,7 @@ end
 gem 'jquery-rails', '2.2.1'
 gem 'kaminari'
 gem "font-awesome-rails"
+gem 'bootbox-rails'
 
 gem 'puma', platforms: :jruby
 

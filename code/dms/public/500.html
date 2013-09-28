@@ -1,25 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="zh_ch">
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
+  <meta charset="utf-8">
+  <title>驾驶员调度信息管理系统</title>
+  <!-- css -->
+  <link href="/assets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/assets/carinfomanage.css" rel="stylesheet" media="screen">
+  <!-- script -->
+  <!--[if lt IE 9]>
+    <script src="/assets/html5.js"></script>
+  <![endif]-->
+  <script src="/assets/jquery.min.js"></script>
 </head>
 
 <body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
+<div id="header" class="container">
+  <header id="header_top" class="header-general">
+    <div id="site_id">
+      <hgroup>
+        <h1><span></span></h1>
+        <h2>驾驶员调度信息管理系统</h2>
+      </hgroup>
+    </div>
+  </header>
+</div>
+<div id="container" class="container">
+  <div id="contents">
+    <section>
+      <h2>系统错误</h2>
+      <div class="alert alert-error">
+        请联系统管理员，确认后在执行操作！
+      </div>
+      <div class="operation">
+        <p><a href="dms/sessions/new"> 返回登录画面</a></p>
+      </div>
+    </section>
   </div>
+</div>
+<div id="footer">
+  <footer id="footer_top" class="container footer-general">
+    <div id="copyright">
+      <p><small>Copyright(C) 2013 Wuxi Ruanxiao2 All Rights Reserved.</small></p>
+    </div>
+  </footer>
+</div>
 </body>
 </html>

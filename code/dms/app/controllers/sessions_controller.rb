@@ -1,10 +1,16 @@
 # encoding: UTF-8
 # author:jairy
+require 'win32/registry'
+
 class SessionsController < ApplicationController
   layout false
   skip_before_filter :require_login
 
   def new
+    Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\DMS')do |reg|
+      value = reg.read('name')
+      redirect_to "/no_access_role.html" unless value[1].to_s == "WUXI-XU-ZHANG-WANG-DRIVER-MANAGE-SYSTEM"
+    end
   end
 
   def create

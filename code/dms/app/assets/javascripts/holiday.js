@@ -68,45 +68,48 @@ $(function () {
     editable: false,
     events: '/dms/holidays.json',
     select: function(start, end, allDay) {
-      var title = prompt('请输入节假日名称:');
-      if (title) {
-        if (dateInHoliday(start) || dateInHoliday(end) || holidayInDate(start, end)) {
-          alert("该日期已经设置过节假日，请重新选择日期!");
+      bootbox.prompt("请输入节假日名称:", "取消", "确定", function(title) {
+        if (title) {
+          if (dateInHoliday(start) || dateInHoliday(end) || holidayInDate(start, end)) {
+            bootbox.alert("<h5>该日期已经设置过节假日，请重新选择日期!</h5>");
+          }
+          else {
+            $.ajax({
+              url: "/dms/holidays",
+              data:{"title": title, "start": start, "end": end},
+              cache: false,
+              method: "post",
+              dataType: 'json',
+              error: function(XMLHttpRequest, textStatus, errorThrown) {$(".alert-warning").show();},
+              success: function (ajaxRes) {
+                calendar.fullCalendar('renderEvent',{
+                  id: ajaxRes.id,
+                  title: ajaxRes.title,
+                  start: ajaxRes.start,
+                  end:ajaxRes.end
+                }, false);
+              }
+            });
+          }
         }
-        else {
-          $.ajax({
-            url: "/dms/holidays",
-            data:{"title": title, "start": start, "end": end},
-            cache: false,
-            method: "post",
-            dataType: 'json',
-            error: function(XMLHttpRequest, textStatus, errorThrown) {$(".alert-warning").show();},
-            success: function (ajaxRes) {
-              calendar.fullCalendar('renderEvent',{
-                id: ajaxRes.id,
-                title: ajaxRes.title,
-                start: ajaxRes.start,
-                end:ajaxRes.end
-              }, false);
-            }
-          });
-        }
-      }
+      });
       calendar.fullCalendar('unselect');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      if (confirm("确定要删除该节假日信息吗？")) {
-        $.ajax({
-          url: "/dms/holidays/" + calEvent.id,
-          cache: false,
-          method: "delete",
-          dataType: 'json',
-          error: function(XMLHttpRequest, textStatus, errorThrown) {$(".alert-warning").show();},
-          success: function (ajaxRes) {
-            calendar.fullCalendar('removeEvents', calEvent.id);
-          }
-        });
-      }
+      bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>", "取消", "确定", function (result) {
+        if (result) {
+          $.ajax({
+            url: "/dms/holidays/" + calEvent.id,
+            cache: false,
+            method: "delete",
+            dataType: 'json',
+            error: function(XMLHttpRequest, textStatus, errorThrown) {$(".alert-warning").show();},
+            success: function (ajaxRes) {
+              calendar.fullCalendar('removeEvents', calEvent.id);
+            }
+          });
+        }
+      });
     }
   });
 });
