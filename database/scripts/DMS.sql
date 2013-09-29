@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `cars`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cars` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `no` varchar(7) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `no` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `type` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `seat` smallint(5) unsigned zerofill DEFAULT NULL,
   `color` varchar(5) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `engine_no` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `shelves_no` varchar(17) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `engine_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `shelves_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `sign_date` date NOT NULL,
-  `entry_no` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `entry_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `insure_date` date NOT NULL,
   `annual_survey_info` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `repair_info` text,
@@ -58,7 +58,8 @@ CREATE TABLE `customer_shuttle_infos` (
   `end_time` varchar(5) NOT NULL,
   `drive_kilo` bigint(20) unsigned NOT NULL,
   `detail_info` text NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_customer_id` FOREIGN KEY (`id`) REFERENCES `customers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -72,9 +73,9 @@ DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL,
-  `phone_no` varchar(11) NOT NULL,
-  `company` varchar(20) NOT NULL,
-  `business` varchar(15) NOT NULL,
+  `phone_no` varchar(15) NOT NULL,
+  `company` varchar(40) NOT NULL,
+  `business` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `uq_customer_name` (`name`,`phone_no`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -107,19 +108,19 @@ DROP TABLE IF EXISTS `drivers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `drivers` (
-  `id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL,
   `sex` varchar(6) NOT NULL DEFAULT 'male',
-  `card_no` varchar(15) NOT NULL,
-  `record_no` varchar(12) NOT NULL,
+  `card_no` varchar(20) NOT NULL,
+  `record_no` varchar(20) NOT NULL,
   `drive_type` varchar(50) NOT NULL,
   `first_get_card_date` date NOT NULL,
   `address` varchar(50) NOT NULL,
-  `phone_no` varchar(11) NOT NULL,
+  `phone_no` varchar(15) NOT NULL,
   `note` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_driver_name` (`name`,`card_no`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='驾驶员';
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='驾驶员';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,4 +149,4 @@ CREATE TABLE `holidays` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-29 11:54:37
+-- Dump completed on 2013-09-29 14:15:12
