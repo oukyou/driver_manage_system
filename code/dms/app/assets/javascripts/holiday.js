@@ -71,7 +71,7 @@ $(function () {
       bootbox.prompt("<h4>请输入节假日名称:</h4>", "取消", "确定", function(title) {
         if (title) {
           if (dateInHoliday(start) || dateInHoliday(end) || holidayInDate(start, end)) {
-            bootbox.alert("<h5>该日期已经设置过节假日，请重新选择日期!</h5>", function() {});
+            bootbox.alert("<h5>该日期已经设置过节假日，请重新选择日期!</h5>", "确定");
           }
           else {
             $.ajax({
@@ -96,7 +96,7 @@ $(function () {
       calendar.fullCalendar('unselect');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>",  function (result) {
+      bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>", "取消", "确定", function (result) {
         if (result) {
           $.ajax({
             url: "/dms/holidays/" + calEvent.id,
