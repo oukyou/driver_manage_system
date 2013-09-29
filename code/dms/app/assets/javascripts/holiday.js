@@ -68,10 +68,10 @@ $(function () {
     editable: false,
     events: '/dms/holidays.json',
     select: function(start, end, allDay) {
-      bootbox.prompt("请输入节假日名称:", "取消", "确定", function(title) {
+      bootbox.prompt("<h4>请输入节假日名称:</h4>", "取消", "确定", function(title) {
         if (title) {
           if (dateInHoliday(start) || dateInHoliday(end) || holidayInDate(start, end)) {
-            bootbox.alert("<h5>该日期已经设置过节假日，请重新选择日期!</h5>");
+            bootbox.alert("<h5>该日期已经设置过节假日，请重新选择日期!</h5>", function() {});
           }
           else {
             $.ajax({
@@ -80,7 +80,7 @@ $(function () {
               cache: false,
               method: "post",
               dataType: 'json',
-              error: function(XMLHttpRequest, textStatus, errorThrown) {$(".alert-warning").show();},
+              error: function(XMLHttpRequest, textStatus, errorThrown) {alert();$(".alert-warning").show();},
               success: function (ajaxRes) {
                 calendar.fullCalendar('renderEvent',{
                   id: ajaxRes.id,
@@ -96,7 +96,7 @@ $(function () {
       calendar.fullCalendar('unselect');
     },
     eventClick: function(calEvent, jsEvent, view) {
-      bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>", "取消", "确定", function (result) {
+      bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>",  function (result) {
         if (result) {
           $.ajax({
             url: "/dms/holidays/" + calEvent.id,

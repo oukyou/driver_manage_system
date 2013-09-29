@@ -23,29 +23,5 @@
 	display: none !important;
 	}
 
-	/* fullcalendar的周末颜色设置 */
-.fc-day,
-.fc-day-header{
-	background-color: #fafad2;
-	font-size: 18px;
-	font-weight: bold;
-}
-.fc-sat,
-.fc-sun{
-	color: red;
-	background-color: #ffffa0 ;
-}
-.fc-today{
-	background-color: #c08040;
-}
-.fc-event{
-	background: #3a87ad;
-	color: #fff;
-	border: #c0ff60;
-	height: 20px;
-	font-size: 14px;
-	font-weight: bold;
-	vertical-align: middle;
-}
 
 

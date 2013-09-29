@@ -15,7 +15,7 @@ class HolidaysController < ApplicationController
     holiday.end = Date.parse(params[:end]).strftime("%Y-%m-%d")
 
     holiday.save()
-    render :json => holiday
+    render :json => holiday.to_json
   end
 
   def destroy

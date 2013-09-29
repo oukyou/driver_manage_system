@@ -57,7 +57,6 @@ CREATE TABLE `customer_shuttle_infos` (
   `start_time` varchar(5) NOT NULL,
   `end_time` varchar(5) NOT NULL,
   `drive_kilo` bigint(20) unsigned NOT NULL,
-  `over_work_time` decimal(3,1) DEFAULT NULL,
   `detail_info` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -132,12 +131,12 @@ DROP TABLE IF EXISTS `holidays`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `holidays` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(10) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
+  `title` varchar(10) NOT NULL,
+  `start` date NOT NULL,
+  `end` date NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `uq_holiday_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `uq_holiday_name` (`title`) USING BTREE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -149,4 +148,4 @@ CREATE TABLE `holidays` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-27 16:31:20
+-- Dump completed on 2013-09-29 11:54:37

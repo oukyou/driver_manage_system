@@ -12,7 +12,7 @@ development:
   adapter: mysql
   database: dms
   username: root
-  password: 123456
+  password: wq32135621
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -22,12 +22,12 @@ test:
   adapter: mysql
   database: necobas_test
   username: root
-  password: 123456
+  password: wq32135621
   host: localhost
 
 production:
   adapter: mysql
   database: necobas
   username: root
-  password: 123456
+  password: wq32135621
   host: localhost

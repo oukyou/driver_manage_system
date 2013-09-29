@@ -16,7 +16,9 @@
   <![endif]-->
   <script src="./javascripts/jquery.min.js"></script>
   <script src="./javascripts/bootstrap.min.js"></script>
+  <script src='./javascripts/bootbox.js'></script>
   <script src='./javascripts/jquery-ui.custom.min.js'></script>
+
   <script src='./javascripts/fullcalendar.min.js'></script>
   <script src="./javascripts/bootstrap-datepicker.js"></script>
   <script src="./javascripts/locales/bootstrap-datepicker.ja.js"></script>
@@ -31,8 +33,8 @@
       $('#header').load('common/header.html');
       $('#footer').load('common/footer.html');
 
-      var hasHoliday = function(date) {
-        var hasHoliday = false,
+       var dateInHoliday = function(date) {
+        var result = false,
             newDate = toDate($.fullCalendar.formatDate(date, "yyyy-MM-dd"));
         $(calendar.fullCalendar('clientEvents')).each(function(key, value) {
           var oldStart = toDate($.fullCalendar.formatDate(value.start, "yyyy-MM-dd"));
@@ -41,10 +43,29 @@
             oldEnd = toDate($.fullCalendar.formatDate(value.end, "yyyy-MM-dd"));
           }
           if (newDate >= oldStart && newDate <= oldEnd ) {
-            hasHoliday = true;
+            result = true;
+            return false;
           }
         });
-        return hasHoliday;
+        return result;
+      }
+
+      var holidayInDate = function (start, end) {
+        var result = false,
+            newStart = toDate($.fullCalendar.formatDate(start, "yyyy-MM-dd")),
+            newEnd = toDate($.fullCalendar.formatDate(end, "yyyy-MM-dd"));
+        $(calendar.fullCalendar('clientEvents')).each(function(key, value) {
+          var oldStart = toDate($.fullCalendar.formatDate(value.start, "yyyy-MM-dd"));
+          var oldEnd = oldStart;
+          if (value.end) {
+            oldEnd = toDate($.fullCalendar.formatDate(value.end, "yyyy-MM-dd"));
+          }
+          if (newStart < oldStart && newEnd > oldEnd ) {
+            result = true;
+            return false;
+          }
+        });
+        return result;
       }
 
       var calendar = $('#calendar').fullCalendar({
@@ -111,33 +132,33 @@
           end: '2013-09-29'
         }],
         select: function(start, end, allDay) {
-          var title = prompt('请输入节假日名称:');
-          if (title) {
-            if (hasHoliday(start) || hasHoliday(end)) {
-              alert("该日期已经设置过节假日，请重新选择日期!");
+          bootbox.prompt("<h4>请输入节假日名称:</h4>",  function(title) {
+            if (title) {
+              if (dateInHoliday(start) || dateInHoliday(end) || holidayInDate(start, end)) {
+                alert("该日期已经设置过节假日，请重新选择日期!");
+              }
+              else {
+                // 此处使用ajax将数据保存到数据库
+                var id = parseInt($("#max_holiday_id").val());
+                calendar.fullCalendar('renderEvent',
+                  {
+                    id:id, // id（必须） 在删除事件时使用，该值对应数据库的节假日id
+                    title: title,
+                    start: start,
+                    end: end
+                  },
+                  false
+                );
+                $("#max_holiday_id").val(id + 1);
+              }
             }
-            else {
-              // 此处使用ajax将数据保存到数据库
-              var id = parseInt($("#max_holiday_id").val());
-              calendar.fullCalendar('renderEvent',
-                {
-                  id:id, // id（必须） 在删除事件时使用，该值对应数据库的节假日id
-                  title: title,
-                  start: start,
-                  end: end
-                },
-                true
-              );
-              $("#max_holiday_id").val(id + 1);
-            }
-          }
+          });
           calendar.fullCalendar('unselect');
         },
         eventClick: function(calEvent, jsEvent, view) {
-          if (confirm("确定要删除该节假日信息吗？")) {
-            // 此处使用ajax删除数据库里面的数据
+          bootbox.confirm("<h5>确定要删除该节假日信息吗？</h5>",  function (result) {
             calendar.fullCalendar('removeEvents', calEvent.id);
-          }
+          });
         }
       });
       $("#contents .fc-event").css("cursor", "pointer");
@@ -147,7 +168,6 @@
 <body id="x_04">
 <div id="header" class="container">
 </div>
-
 <div id="container" class="container">
   <div id="contents">
     <section>

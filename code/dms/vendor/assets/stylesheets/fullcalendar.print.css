@@ -29,7 +29,7 @@
 	background-color: #fafad2;
 	font-size: 18px;
 	font-weight: bold;
-	cursor:pointer;
+	cursor: pointer;
 }
 .fc-sat,
 .fc-sun{
@@ -47,7 +47,8 @@
 	font-size: 14px;
 	font-weight: bold;
 	vertical-align: middle;
-	cursor:pointer;
+	cursor: pointer;
 }
+
 
 
